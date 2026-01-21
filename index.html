@@ -11,6 +11,7 @@
       color: #333;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
     header {
       background-color: #2c3e50;
@@ -27,18 +28,49 @@
       padding: 1rem;
     }
     nav button {
-      background: none;
-      border: none;
+      background-color: #ffffff;
+      border: 2px solid #2c3e50;
+      border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
       padding: 0.5rem 1rem;
+      color: #2c3e50;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    nav button:hover {
+      background-color: #2c3e50;
+      color: #ffffff;
+    }
+    nav button.active-tab {
+      background-color: #2c3e50;
+      color: #ffffff;
     }
     .section {
       display: none;
       padding: 2rem;
+      max-width: 800px;
+      margin: auto;
     }
     .active {
       display: block;
+    }
+    .section p,
+    .section li {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .section ul {
+      padding-left: 1.5rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    h3 {
+      font-size: 1.3rem;
+      color: #34495e;
+      margin-top: 2rem;
     }
     .carousel {
       display: flex;
@@ -63,6 +95,12 @@
       padding: 0.5rem 1rem;
       cursor: pointer;
       border-radius: 5px;
+    }
+    .destaque {
+      display: block;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-top: 0.3rem;
     }
   </style>
 </head>
@@ -93,29 +131,35 @@
     <h3>Open Cybersecurity</h3>
     <p><strong>Conteúdo, Enablement, Marketing Técnico e Operações</strong></p>
     <ul>
-      <li>Produção de conteúdos educacionais para o Vanta Learning em Português e Espanhol, ampliando a autonomia dos clientes LATAM.</li>
-      <li>Criação de apresentações comerciais personalizadas, adaptadas de materiais originais da Vanta em inglês.</li>
-      <li>Participação no evento Mind The Sec, com coleta de 400+ leads e criação de mensagens direcionadas.</li>
-      <li>Migração do suporte do Intercom para Linear, reduzindo custos operacionais.</li>
-      <li>Criação de material de handover junto ao time de implantação, alinhando escopo e cronograma.</li>
+      <li>Produção de conteúdos educacionais para o Vanta Learning em Português e Espanhol.</li>
+      <li>Criação de apresentações comerciais personalizadas, adaptadas ao contexto de cada lead.
+        <span class="destaque">Resultado: 5 clientes conquistados em menos de 5 meses.</span></li>
+      <li>Participação no evento Mind The Sec, coleta de 400+ leads e mensagens direcionadas.
+        <span class="destaque">Resultado: mínimo de 40 leads qualificados.</span></li>
+      <li>Migração do suporte do Intercom para Linear.
+        <span class="destaque">Resultado: redução de custos operacionais.</span></li>
+      <li>Criação de material de handover com time de implantação.</li>
     </ul>
 
     <h3>Mobiliza</h3>
     <p><strong>Customer Experience, Suporte, Automação e Processos</strong></p>
     <ul>
-      <li>Atuação desde o início da plataforma LMS própria, atendendo clientes do Applique (SCORM).</li>
-      <li>Implementação de chatbot no Intercom com fluxos direcionados para alunos e administradores.</li>
-      <li>Manutenção de NPS acima de 95% com SLA e resolução efetiva.</li>
-      <li>Criação de sistema de priorização de tickets junto ao time de desenvolvimento.</li>
-      <li>Produção de conteúdos institucionais e de marketing interno utilizando Canva.</li>
+      <li>Atuação desde o início da plataforma LMS própria.</li>
+      <li>Implementação de chatbot no Intercom com fluxos para alunos e administradores.
+        <span class="destaque">Resultado: redução de pelo menos 50% dos atendimentos humanos.</span></li>
+      <li>Manutenção de NPS acima de 95%.
+        <span class="destaque">Resultado: alta satisfação e eficiência no atendimento.</span></li>
+      <li>Criação de sistema de priorização de tickets.</li>
+      <li>Produção de conteúdos institucionais e marketing interno com Canva.</li>
     </ul>
 
     <h3>Qi Network – Google Cloud Partner</h3>
     <p><strong>Customer Success, Pós-vendas, Pré-vendas e Operações Comerciais</strong></p>
     <ul>
-      <li>Atuação na fase inicial do Customer Success no Brasil com aumento progressivo de responsabilidades.</li>
-      <li>Gestão de grandes clientes e condução de 20+ reuniões mensais.</li>
-      <li>Gestão completa do ciclo do cliente: onboarding, relatórios, melhorias e renovações.</li>
+      <li>Atuação na fase inicial do Customer Success no Brasil.</li>
+      <li>Gestão de grandes clientes e 20+ reuniões mensais.</li>
+      <li>Gestão completa do ciclo do cliente.
+        <span class="destaque">Resultado: 100% das metas de renovação atingidas.</span></li>
       <li>Documentação no Salesforce e participação em eventos com o Google.</li>
       <li>Certificação oficial em Customer Success para G Suite.</li>
     </ul>
@@ -174,6 +218,8 @@
     function showSection(id) {
       document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
+      document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active-tab'));
+      document.querySelector(`nav button[onclick="showSection('${id}')"]`).classList.add('active-tab');
     }
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
@@ -181,6 +227,3 @@
   </script>
 </body>
 </html>
-
-
-
