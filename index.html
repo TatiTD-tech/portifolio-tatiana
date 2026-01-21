@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Tatiana Tafur</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #ecf0f1;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    nav button {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+    }
+    .section {
+      display: none;
+      padding: 2rem;
+    }
+    .active {
+      display: block;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+    }
+    .carousel img {
+      height: 200px;
+      border-radius: 8px;
+    }
+    .dark-mode {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+    }
+    #darkModeToggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #34495e;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tatiana Tafur</h1>
+    <p>Customer Experience | Enablement | Conteúdo Técnico | Projetos Criativos</p>
+    <p>📧 tatiana.t.tafur@gmail.com | 🔗 <a href="https://www.linkedin.com/in/tatianatafur" target="_blank">LinkedIn</a> | 📍 Sul Brasil, SC</p>
+    <p>🔗 <a href="http://vocesabiapergunteaqui.blogspot.com" target="_blank">Blog: Você Sabia? Pergunte Aqui</a></p>
+    <button id="darkModeToggle" onclick="toggleDarkMode()">Alternar Modo Escuro</button>
+  </header>
+  <nav>
+    <button onclick="showSection('resumo')">Resumo</button>
+    <button onclick="showSection('experiencia')">Experiência</button>
+    <button onclick="showSection('formacao')">Formação</button>
+    <button onclick="showSection('visual')">Portfólio Visual</button>
+  </nav>
+
+  <section id="resumo" class="section active">
+    <h2>Resumo Profissional</h2>
+    <p>Profissional com sólida experiência em Customer Experience, Customer Success, Enablement e Operações, atuando em empresas de tecnologia, segurança da informação e plataformas educacionais.</p>
+    <p>Atuo conectando produto, clientes e times internos, organizando processos, escalando atendimento com qualidade e produzindo conteúdos técnicos e educativos com foco em eficiência, resultado e experiência humanizada.</p>
+    <p>Tenho histórico comprovado de crescimento de responsabilidade, impacto mensurável em vendas, suporte e retenção, além de forte capacidade de traduzir complexidade técnica em comunicação clara e soluções práticas.</p>
+  </section>
+
+  <section id="experiencia" class="section">
+    <!-- Experiência mantida como está -->
+  </section>
+
+  <section id="formacao" class="section">
+    <!-- Formação mantida como está -->
+  </section>
+
+  <section id="visual" class="section">
+    <h2>Portfólio Visual</h2>
+
+    <h3>Projetos Comerciais – Parcela Fácil SBO</h3>
+    <p>Peças de comunicação para redes sociais desenvolvidas para o perfil da Parcela Fácil SBO, com foco em educação financeira e engajamento de público.</p>
+    <div class="carousel">
+      <img src="ajuda_parcelar_contas.png" alt="Ajuda para parcelar contas">
+      <img src="Ana_parcelou_contas.png" alt="Ana parcelou contas">
+      <img src="beneficios_contas.png" alt="Benefícios de parcelar contas">
+      <img src="cartao_credito_aliado_contas.png" alt="Cartão de crédito como aliado">
+      <img src="cartao_credito_parcela_facil.png" alt="Usar o cartão ao seu favor">
+    </div>
+
+    <h3>Projetos Criativos – Lua Cósmica Tarot</h3>
+    <p>Conteúdo visual criado para o perfil @lua_cosmicatarot com foco em expansão de consciência, mentalidade e prosperidade através do tarot.</p>
+    <div class="carousel">
+      <img src="1 decanato.png" alt="Decanato 1">
+      <img src="2 decanato.png" alt="Decanato 2">
+      <img src="3 decanato.png" alt="Decanato 3">
+      <img src="Curtiu o post.png" alt="Call to action">
+      <img src="Decanatos de cancer.png" alt="Decanatos de Câncer">
+    </div>
+
+    <h3>Projetos Autorais – Myagui Lembranças Artesanais</h3>
+    <p>Peças gráficas e promocionais criadas para divulgar produtos artesanais personalizados, com foco em originalidade e apelo afetivo.</p>
+    <div class="carousel">
+      <img src="1_myagui.png" alt="Myagui - peça 1">
+      <img src="2_myagui.png" alt="Myagui - peça 2">
+      <img src="3_myagui.png" alt="Myagui - peça 3">
+    </div>
+
+    <p><em>Outras categorias de projetos (educacionais, técnicos e interativos) serão adicionadas com curadoria dos materiais mais relevantes.</em></p>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
