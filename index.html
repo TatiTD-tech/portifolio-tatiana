@@ -8,7 +8,7 @@
     body {
       font-family: sans-serif;
       background-color: #f9f9f9;
-      color: #333;
+      color: #2c2c2c;
       margin: 0;
       padding: 0;
       line-height: 1.6;
@@ -20,22 +20,28 @@
       text-align: center;
       position: relative;
     }
+    a {
+      color: #f9f9f9;
+    }
+    a:visited {
+      color: #e0e0e0;
+    }
     nav {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       background-color: #ecf0f1;
-      gap: 0.5rem;
+      gap: 1rem;
       padding: 1rem;
     }
     nav button {
       background: none;
-      border: none;
+      border: 1px solid #34495e;
+      background-color: #fff;
       font-size: 1rem;
       cursor: pointer;
       padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background 0.3s ease;
+      border-radius: 5px;
+      transition: background-color 0.3s;
     }
     nav button:hover {
       background-color: #dcdcdc;
@@ -43,6 +49,14 @@
     .section {
       display: none;
       padding: 2rem;
+    }
+    .section p {
+      margin-bottom: 1rem;
+    }
+    .section ul {
+      margin-left: 1.5rem;
+      padding-left: 1rem;
+      line-height: 1.6;
     }
     .active {
       display: block;
@@ -71,21 +85,23 @@
       cursor: pointer;
       border-radius: 5px;
     }
-    @media (max-width: 600px) {
-      header, nav, .section {
-        padding: 1rem;
-      }
-      .carousel img {
-        height: 150px;
-      }
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-      nav button {
-        width: 100%;
-        text-align: center;
-      }
+    .section h3 {
+      color: #34495e;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .experience-block {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+    .experience-block ul {
+      list-style-type: disc;
+    }
+    .experience-block li {
+      margin-bottom: 0.8rem;
     }
   </style>
 </head>
@@ -104,97 +120,60 @@
     <button onclick="showSection('visual')">Portfólio Visual</button>
   </nav>
 
-  <section id="resumo" class="section active">
-    <h2>Resumo Profissional</h2>
-    <p>Profissional com sólida experiência em Customer Experience, Customer Success, Enablement e Operações, atuando em empresas de tecnologia, segurança da informação e plataformas educacionais.</p>
-    <p>Atuo conectando produto, clientes e times internos, organizando processos, escalando atendimento com qualidade e produzindo conteúdos técnicos e educativos com foco em eficiência, resultado e experiência humanizada.</p>
-    <p>Tenho histórico comprovado de crescimento de responsabilidade, impacto mensurável em vendas, suporte e retenção, além de forte capacidade de traduzir complexidade técnica em comunicação clara e soluções práticas.</p>
-  </section>
+  <section id="experiencia" class="section active">
+    <h2 style="text-align:center">Experiência Profissional</h2>
 
-  <section id="experiencia" class="section">
-    <h2>Experiência Profissional</h2>
-    <h3>Open Cybersecurity</h3>
-    <p><strong>Conteúdo, Enablement, Marketing Técnico e Operações</strong></p>
-    <ul>
-      <li>Produção de conteúdos educacionais para o Vanta Learning em Português e Espanhol, ampliando a autonomia dos clientes LATAM. <strong>Resultado: 5 clientes conquistados em menos de 5 meses.</strong></li>
-      <li>Criação de apresentações comerciais personalizadas adaptadas de materiais da Vanta. <strong>Alinhamento visual e textual com o contexto regional.</strong></li>
-      <li>Participação no evento Mind The Sec com coleta de +400 leads e segmentação estratégica. <strong>Resultado: mínimo de 40 leads qualificados.</strong></li>
-      <li>Migração do suporte do Intercom para Linear. <strong>Redução de custos operacionais.</strong></li>
-      <li>Material de handover alinhado com escopo, funcionalidades e cronograma para implantação.</li>
-    </ul>
-
-    <h3>Mobiliza</h3>
-    <p><strong>Customer Experience, Suporte, Automação e Processos</strong></p>
-    <ul>
-      <li>Implementação de chatbot no Intercom. <strong>Redução de pelo menos 50% dos atendimentos humanos.</strong></li>
-      <li>Manutenção de NPS acima de 95%. <strong>Foco em SLA e atendimento humanizado.</strong></li>
-      <li>Criação de sistema inteligente de priorização de tickets. <strong>Agilidade no fluxo e redução de gargalos.</strong></li>
-      <li>Produção de conteúdos institucionais com Canva.</li>
-    </ul>
-
-    <h3>Qi Network – Google Cloud Partner</h3>
-    <p><strong>Customer Success, Pós-vendas, Pré-vendas e Operações Comerciais</strong></p>
-    <ul>
-      <li>Gestão de grandes clientes com condução de 20+ reuniões mensais. <strong>Alto impacto e engajamento técnico.</strong></li>
-      <li>Gestão completa do ciclo de vida do cliente. <strong>100% das metas de renovação atingidas.</strong></li>
-      <li>Documentação detalhada no Salesforce para alinhamento entre áreas.</li>
-      <li>Participação em eventos com o Google e certificação oficial em CS para G Suite.</li>
-    </ul>
-  </section>
-
-  <section id="formacao" class="section">
-    <h2>Formação Acadêmica e Cursos</h2>
-    <h3>Formação Acadêmica</h3>
-    <ul>
-      <li>MBA em Gestão de Pessoas e Liderança – Faculdade Dominius (2022 – 2023)</li>
-      <li>Graduação em Gestão de Recursos Humanos – Universidade Estácio de Sá (2016 – 2018)</li>
-      <li>Tecnólogo em Gestão de Sistemas de Informação – IFSC (2007 – 2008)</li>
-    </ul>
-    <h3>Formação Complementar</h3>
-    <ul>
-      <li>Curso de Locução de Rádio – Comunicação clara, gravação de conteúdos e materiais educativos</li>
-      <li>Curso de Dashboards – Karen Abecia – Análise avançada de dados e métricas</li>
-      <li>Design de Conversas para Chatbots – Criação de fluxos, linguagem natural e UX</li>
-      <li>Artificial Intelligence Essentials V2 – Fundamentos de IA aplicada a negócios</li>
-    </ul>
-  </section>
-
-  <section id="visual" class="section">
-    <h2>Portfólio Visual</h2>
-    <h3>Projetos Comerciais – Parcela Fácil SBO</h3>
-    <p>Peças de comunicação para redes sociais desenvolvidas para o perfil da Parcela Fácil SBO, com foco em educação financeira e engajamento de público.</p>
-    <div class="carousel">
-      <img src="@ParcelfacilSBO.png">
-      <img src="ajuda_contas.png">
-      <img src="casa_reforma.png">
-      <img src="contas (3).png">
-      <img src="contas_carro (1).png">
+    <div class="experience-block">
+      <h3>Open Cybersecurity (Julho à Dezembro de 2025)</h3>
+      <p><strong>Conteúdo, Enablement, Marketing Técnico e Operações</strong></p>
+      <ul>
+        <li>Produção de conteúdos educacionais para o Vanta Learning em Português e Espanhol, ampliando a autonomia dos clientes LATAM.</li>
+        <li>Criação de apresentações comerciais personalizadas, adaptadas de materiais originais da Vanta em inglês, mantendo padrão visual e ajustando linguagem ao contexto de cada lead.<br><strong>Resultado:</strong> 5 clientes conquistados em menos de 5 meses.</li>
+        <li>Participação no evento Mind The Sec, com coleta de 400+ leads, segmentação por área e cargo e criação de mensagens direcionadas.<br><strong>Resultado:</strong> mínimo de 40 leads qualificados.</li>
+        <li>Migração do suporte do Intercom para uma solução mais enxuta utilizando Linear, reduzindo custos operacionais.</li>
+        <li>Criação de material de handover junto ao time de implantação, alinhando escopo, funcionalidades e cronograma para clientes e equipe interna.</li>
+      </ul>
     </div>
 
-    <h3>Projetos Criativos – Lua Cósmica Tarot</h3>
-    <p>Conteúdo visual criado para o perfil @lua_cosmicatarot com foco em expansão de consciência, mentalidade e prosperidade através do tarot.</p>
-    <div class="carousel">
-      <img src="0709.png">
-      <img src="0909.png">
-      <img src="1109.png">
-      <img src="1209.png">
-      <img src="1309.png">
+    <div class="experience-block">
+      <h3>Mobiliza (Maio de 2020 à Abril de 2024)</h3>
+      <p><strong>Customer Experience, Suporte, Automação e Processos</strong></p>
+      <ul>
+        <li>Atuação desde o início da plataforma LMS própria, atendendo clientes do Applique (SCORM) e alunos de universidades corporativas.</li>
+        <li>Implementação de chatbot no Intercom, com fluxos direcionados para alunos e administradores.<br><strong>Resultado:</strong> redução de pelo menos 50% dos atendimentos humanos, com triagem eficiente.</li>
+        <li>Manutenção de NPS acima de 95%, combinando automação com atendimento humanizado e foco em SLA e resolução efetiva.</li>
+        <li>Criação, junto ao time de desenvolvimento, de um sistema de priorização inteligente de tickets, agilizando a fila e reduzindo gargalos.</li>
+        <li>Produção de conteúdos institucionais e de marketing interno, utilizando Canva.</li>
+      </ul>
     </div>
 
-    <h3>Projetos Autorais – Myagui Lembranças Artesanais</h3>
-    <p>Peças gráficas e promocionais criadas para divulgar produtos artesanais personalizados, com foco em originalidade e apelo afetivo.</p>
-    <div class="carousel">
-      <img src="1.png">
-      <img src="2.png">
-      <img src="3.png">
+    <div class="experience-block">
+      <h3>Qi Network – Google Cloud Partner (Janeiro de 2018 à Março de 2020)</h3>
+      <p><strong>Customer Success, Pós-vendas, Pré-vendas e Operações Comerciais</strong></p>
+      <ul>
+        <li>Atuação em fase inicial do Customer Success no Brasil, com crescimento progressivo de responsabilidade.</li>
+        <li>Evolução para carteira de grandes clientes, com maior complexidade e impacto.</li>
+        <li>Condução média de 20 reuniões mensais, acompanhando adoção do G Suite / Google Workspace, identificando desafios e apresentando soluções práticas.</li>
+        <li>Gestão completa do ciclo do cliente: onboarding, acompanhamento contínuo, relatórios, projetos de melhoria e renovação de contratos.<br><strong>Resultado:</strong> 100% das metas de renovação atingidas e construção de casos de sucesso.</li>
+        <li>Documentação completa das interações no Salesforce, garantindo histórico, previsibilidade e alinhamento entre áreas.</li>
+        <li>Atuação em pré-vendas e prospecção, em parceria com marketing:
+          <ul>
+            <li>eventos com o Google</li>
+            <li>mapeamento de ICP</li>
+            <li>qualificação de leads (BANT)</li>
+            <li>envio de materiais comerciais e follow-ups</li>
+          </ul>
+        </li>
+        <li>Participação presencial em atividades na Google e certificação oficial em Customer Success para G Suite.</li>
+      </ul>
     </div>
-    <p><em>Outras categorias de projetos (educacionais, técnicos e interativos) serão adicionadas com curadoria dos materiais mais relevantes.</em></p>
   </section>
 
   <script>
     function showSection(id) {
       document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+      const target = document.getElementById(id);
+      if (target) target.classList.add('active');
     }
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
